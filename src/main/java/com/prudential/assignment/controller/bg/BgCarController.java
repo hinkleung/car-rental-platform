@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -46,6 +47,12 @@ public class BgCarController {
     public Response<Void> delete(@PathVariable("id") Long id) {
         carService.delete(id);
         return Response.success();
+    }
+
+    @ApiIgnore
+    @GetMapping("hello")
+    public Response<String> hello() {
+        return Response.success("hello world");
     }
 
 }
