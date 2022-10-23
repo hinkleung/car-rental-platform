@@ -30,8 +30,8 @@ public class ReservationController {
 
     @ApiOperation("查询可预订的车型")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "startTime", value = "开始时间", required = true),
-            @ApiImplicitParam(name = "endTime", value = "结束时间", required = true)
+            @ApiImplicitParam(name = "startTime", value = "开始时间 格式yyyy-MM-dd HH:mm:ss", required = true),
+            @ApiImplicitParam(name = "endTime", value = "结束时间 格式yyyy-MM-dd HH:mm:ss", required = true)
     })
     @GetMapping("/getReservableCars")
     public Response<List<CarVO>> getReservableCars(@RequestParam("startTime")
