@@ -11,11 +11,11 @@ import javax.validation.constraints.NotNull;
 @ApiModel("新增车型请求")
 public class CarAddRequest {
 
-    @ApiModelProperty("车型")
+    @ApiModelProperty(value = "车型", required = true)
     @NotBlank(message = "车型不能为空")
     private String carModel;
 
-    @ApiModelProperty("库存")
+    @ApiModelProperty(value = "库存", required = true)
     @NotNull(message = "库存不能为空")
     private Integer stock;
 

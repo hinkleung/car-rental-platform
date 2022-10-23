@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @ApiModel("更新车型请求")
 public class CarUpdateRequest {
 
-    @ApiModelProperty("id")
+    @ApiModelProperty(value = "id", required = true)
     @NotNull(message = "id不能为空")
     private Long id;
 

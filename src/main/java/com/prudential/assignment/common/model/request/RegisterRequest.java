@@ -10,11 +10,11 @@ import javax.validation.constraints.NotBlank;
 @ApiModel("注册请求体")
 public class RegisterRequest {
 
-    @ApiModelProperty("用户名")
+    @ApiModelProperty(value = "用户名", required = true)
     @NotBlank(message = "username can't be null and empty")
     private String username;
 
-    @ApiModelProperty("密码")
+    @ApiModelProperty(value = "密码", required = true)
     @NotBlank(message = "password can't be null and empty")
     private String password;
 

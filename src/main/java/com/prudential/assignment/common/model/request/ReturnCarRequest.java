@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @ApiModel("归还车辆请求")
 public class ReturnCarRequest {
 
-    @ApiModelProperty("预定记录id")
+    @ApiModelProperty(value = "预定记录id", required = true)
     @NotNull(message = "未选中预定记录")
     private Long reservationId;
 

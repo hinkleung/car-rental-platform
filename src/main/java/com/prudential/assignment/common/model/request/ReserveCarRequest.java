@@ -12,16 +12,16 @@ import java.time.LocalDateTime;
 @ApiModel("预订车辆请求")
 public class ReserveCarRequest {
 
-    @ApiModelProperty("车型id")
+    @ApiModelProperty(value = "车型id", required = true)
     @NotNull(message = "未选择车型")
     private Long carId;
 
-    @ApiModelProperty("开始时间 格式yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "开始时间 格式yyyy-MM-dd HH:mm:ss", required = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message = "预定开始时间不能为空")
     private LocalDateTime startTime;
 
-    @ApiModelProperty("结束时间 格式yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "结束时间 格式yyyy-MM-dd HH:mm:ss", required = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message = "预定结束时间不能为空")
     private LocalDateTime endTime;
