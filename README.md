@@ -1,2 +1,2 @@
-# car-prental-platform
+# car-rental-platform
 assignment from interview
