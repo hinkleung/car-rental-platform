@@ -85,36 +85,36 @@
 				</configuration>
 			</plugin>
 			<!--使用docker-maven-plugin插件-->
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.2.2</version>
-				<executions>
-					<execution>
-						<id>build-image</id>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<imageName>prudential/${project.artifactId}:${project.version}</imageName>
-					<dockerHost>http://ip:port</dockerHost>
-					<baseImage>openjdk:8</baseImage>
-					<!-- build时，指定–rm=true即build完成后删除中间容器 -->
-					<rm>true</rm>
-					<entryPoint>["java", "-jar","-Dspring.profiles.active=prod","${project.build.finalName}.jar"]
-					</entryPoint>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
-				</configuration>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>com.spotify</groupId>-->
+<!--				<artifactId>docker-maven-plugin</artifactId>-->
+<!--				<version>1.2.2</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>build-image</id>-->
+<!--						<phase>package</phase>-->
+<!--						<goals>-->
+<!--							<goal>build</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--				<configuration>-->
+<!--					<imageName>prudential/${project.artifactId}:${project.version}</imageName>-->
+<!--					<dockerHost>http://ip:2375</dockerHost>-->
+<!--					<baseImage>openjdk:8</baseImage>-->
+<!--					&lt;!&ndash; build时，指定–rm=true即build完成后删除中间容器 &ndash;&gt;-->
+<!--					<rm>true</rm>-->
+<!--					<entryPoint>["java", "-jar","-Dspring.profiles.active=prod","${project.build.finalName}.jar"]-->
+<!--					</entryPoint>-->
+<!--					<resources>-->
+<!--						<resource>-->
+<!--							<targetPath>/</targetPath>-->
+<!--							<directory>${project.build.directory}</directory>-->
+<!--							<include>${project.build.finalName}.jar</include>-->
+<!--						</resource>-->
+<!--					</resources>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 

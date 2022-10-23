@@ -116,7 +116,7 @@ public class ReservationServiceImpl implements ReservationService {
         List<Reservation> records = page.getRecords();
         List<Long> carIds = records.stream().map(Reservation::getCarId).distinct().collect(Collectors.toList());
         List<Car> cars;
-        if (CollectionUtils.isEmpty(carIds)) {
+        if (!CollectionUtils.isEmpty(carIds)) {
             cars = carDao.selectByIds(carIds);
         } else {
             cars = new ArrayList<>();
